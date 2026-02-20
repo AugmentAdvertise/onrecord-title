@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnRecord Title — A Modern Spin on Title | Utah Title Company</title>
+  <meta name="description" content="Trusted by Utah's leading Realtors, Builders, and Loan Officers. Modern title insurance, escrow, and closing services across Utah. Mobile closings available.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="OnRecord Title — A Modern Spin on Title">
+  <meta property="og:description" content="Trusted by Utah's leading Realtors, Builders, and Loan Officers. Modern title insurance, escrow, and closing services.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://onrecord-title.vercel.app">
+  
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "OnRecord Title",
+    "description": "Modern title insurance, escrow, and closing services in Utah",
+    "url": "https://onrecord-title.vercel.app",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "UT",
+      "addressCountry": "US"
+    },
+    "serviceArea": {
+      "@type": "State",
+      "name": "Utah"
+    }
+  }
+  </script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables - Design System */
+    :root {
+      /* Colors */
+      --primary: #2563eb;
+      --primary-light: #3b82f6;
+      --primary-dark: #1d4ed8;
+      --accent: #f59e0b;
+      --bg: #ffffff;
+      --bg-alt: #f9fafb;
+      --bg-dark: #111827;
+      --text: #111827;
+      --text-light: #6b7280;
+      --text-muted: #9ca3af;
+      --border: #e5e7eb;
+      --success: #10b981;
+      
+      /* Spacing */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      --space-2xl: 3rem;
+      --space-3xl: 4rem;
+      
+      /* Typography */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 1.875rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+      
+      /* Font Weights */
+      --font-normal: 400;
+      --font-medium: 500;
+      --font-semibold: 600;
+      --font-bold: 700;
+      --font-extrabold: 800;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+    
+    /* Container System */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+    
+    /* Header */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-lg) 0;
+    }
+    
+    .logo {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      color: var(--primary);
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xl);
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: var(--font-medium);
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    /* Hero */
+    .hero {
+      padding: var(--space-3xl) 0;
+      text-align: center;
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: 100px;
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-lg);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    h1 {
+      font-size: clamp(2.25rem, 4vw, 3.75rem);
+      font-weight: var(--font-extrabold);
+      line-height: 1.1;
+      margin-bottom: var(--space-lg);
+      color: var(--text);
+    }
+    
+    h1 span {
+      color: var(--primary);
+    }
+    
+    .hero p {
+      font-size: var(--text-xl);
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: var(--space-md) var(--space-xl);
+      border-radius: 8px;
+      font-weight: var(--font-semibold);
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-1px);
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      margin-top: var(--space-xl);
+    }
+    
+    /* Stats Grid */
+    .stats-section {
+      padding: var(--space-3xl) 0;
+      background: white;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-2xl);
+      text-align: center;
+    }
+    
+    .stat-card h3 {
+      font-size: var(--text-5xl);
+      font-weight: var(--font-extrabold);
+      color: var(--primary);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .stat-card p {
+      color: var(--text-light);
+      font-size: var(--text-lg);
+    }
+    
+    /* Section */
+    .section {
+      padding: var(--space-3xl) 0;
+    }
+    
+    .section-alt {
+      background: var(--bg-alt);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--space-2xl);
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: 100px;
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      margin-bottom: var(--space-md);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    h2 {
+      font-size: clamp(1.875rem, 3vw, 2.25rem);
+      font-weight: var(--font-extrabold);
+      line-height: 1.2;
+      margin-bottom: var(--space-md);
+    }
+    
+    .section-header p {
+      font-size: var(--text-lg);
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-2xl);
+    }
+    
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-2xl);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .service-icon {
+      font-size: var(--text-4xl);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .service-card h3 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-md);
+    }
+    
+    .service-card p {
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    
+    /* Team Grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-2xl);
+    }
+    
+    .team-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-2xl);
+      text-align: center;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .team-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-5xl);
+      margin: 0 auto var(--space-lg);
+    }
+    
+    .team-card h3 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .team-card .role {
+      color: var(--primary);
+      font-weight: var(--font-medium);
+      margin-bottom: var(--space-md);
+    }
+    
+    .team-card p {
+      color: var(--text-light);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+    }
+    
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-2xl);
+    }
+    
+    .review-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-2xl);
+    }
+    
+    .stars {
+      color: #f59e0b;
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-md);
+    }
+    
+    .review-card blockquote {
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      margin-bottom: var(--space-lg);
+      color: var(--text);
+    }
+    
+    .reviewer {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    
+    .reviewer-name {
+      font-weight: var(--font-semibold);
+      color: var(--text);
+    }
+    
+    .reviewer-role {
+      color: var(--primary);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+    }
+    
+    .reviewer-location {
+      color: var(--text-muted);
+      font-size: var(--text-sm);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      padding: var(--space-3xl) 0;
+      text-align: center;
+      color: white;
+    }
+    
+    .cta-section h2 {
+      color: white;
+      margin-bottom: var(--space-md);
+    }
+    
+    .cta-section p {
+      font-size: var(--text-xl);
+      opacity: 0.9;
+      margin-bottom: var(--space-2xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn-white {
+      background: white;
+      color: var(--primary);
+    }
+    
+    .btn-white:hover {
+      background: var(--bg-alt);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--bg-dark);
+      color: white;
+      padding: var(--space-2xl) 0;
+      text-align: center;
+    }
+    
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .services-grid,
+      .team-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Accessibility */
+    a:focus,
+    button:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+    
+    *:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header>
+    <nav class="container">
+      <div class="logo">OnRecord Title</div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Trusted by Utah's Leading Professionals</div>
+      <h1>A Modern Spin on <span>Title</span></h1>
+      <p>Smooth closings, clear communication, and the modern experience you deserve. Trusted by top Realtors, Builders, and Loan Officers across Utah.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <a href="#services" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>11+</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Client Satisfaction</p>
+        </div>
+        <div class="stat-card">
+          <h3>24hr</h3>
+          <p>Avg. Turnaround</p>
+        </div>
+        <div class="stat-card">
+          <h3>3</h3>
+          <p>Closing Options</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Our Services</span>
+        <h2>Everything You Need for a Smooth Closing</h2>
+        <p>Comprehensive title insurance, escrow, and closing services tailored to Utah real estate professionals and their clients.</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Title Insurance</h3>
+          <p>Comprehensive title searches and insurance policies that protect your investment. We identify and resolve issues before they become problems.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🏦</div>
+          <h3>Escrow Services</h3>
+          <p>Secure, transparent escrow management. Your funds are held safely while we coordinate every detail of your transaction.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🔑</div>
+          <h3>Flexible Closings</h3>
+          <p>In-office, mobile, or remote — we close on your terms. Our team makes sure everything is recorded accurately and on time.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🚗</div>
+          <h3>Mobile Closing</h3>
+          <p>We come to you — your office, a coffee shop, wherever works. Convenient closings on your schedule.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Online Closing</h3>
+          <p>Digital documents, e-signatures, and real-time updates. Close from anywhere with modern technology.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Office Closing</h3>
+          <p>Traditional in-office closings with a personal touch. Fast turnaround and expert guidance every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Team -->
+  <section id="team" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Our Team</span>
+        <h2>Meet the OnRecord Team</h2>
+        <p>Experienced professionals dedicated to making every closing seamless.</p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo">👤</div>
+          <h3>Kyle</h3>
+          <p class="role">Owner & Escrow Officer</p>
+          <p>Kyle began working in Title and Escrow in 2013. He has become passionate about helping clients reach their goals in real estate and is not afraid to work on tough transactions. He prides himself in responding quickly and being available whenever clients need him. Kyle and his wife, Stacie, have three kids and love spending time together watching the Utah Utes, Utah Jazz, and Seattle Mariners.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-photo">👤</div>
+          <h3>Spencer "Shigs" Higby</h3>
+          <p class="role">Order Entry & Technology</p>
+          <p>University of Utah student pursuing Business & AI. Spencer brings fresh tech perspectives to keep OnRecord ahead of the curve. Known for his strong work ethic, positive attitude, and eagerness to learn, Spencer plays a key role in order entry while assisting with various technology needs to ensure smooth operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Reviews -->
+  <section id="reviews" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Client Reviews</span>
+        <h2>Trusted by Utah's Top Professionals</h2>
+        <p>Hear from the Realtors, Builders, and Loan Officers who rely on OnRecord Title.</p>
+      </div>
+      
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"OnRecord made our closing incredibly smooth. Communication was top-notch from start to finish. Kyle is always available and goes above and beyond. I recommend them to all my clients."</blockquote>
+          <div class="reviewer">
+            <div class="reviewer-name">Sarah Mitchell</div>
+            <div class="reviewer-role">Realtor, Coldwell Banker</div>
+            <div class="reviewer-location">Salt Lake City, UT</div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Working with OnRecord on multiple custom home builds has been seamless. Their team understands the complexity of new construction and handles everything with precision. True professionals."</blockquote>
+          <div class="reviewer">
+            <div class="reviewer-name">James Rodriguez</div>
+            <div class="reviewer-role">Builder, Summit Ridge Homes</div>
+            <div class="reviewer-location">Draper, UT</div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Fast, accurate, and always available when I have questions. OnRecord is my go-to title company for every transaction. My clients love the mobile closing option."</blockquote>
+          <div class="reviewer">
+            <div class="reviewer-name">Michael Chen</div>
+            <div class="reviewer-role">Loan Officer, Summit Funding</div>
+            <div class="reviewer-location">Provo, UT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section id="contact" class="cta-section">
+    <div class="container">
+      <h2>Ready to Experience a Modern Closing?</h2>
+      <p>Join Utah's leading Realtors, Builders, and Loan Officers who trust OnRecord Title.</p>
+      <a href="mailto:contact@onrecordtitle.com" class="btn btn-white">Get in Touch</a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 OnRecord Title. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
